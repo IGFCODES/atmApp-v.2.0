@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ATM App</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .atm-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.6rem;
+      box-shadow: 0 0.4rem 1rem;
+      rgb(0,0,0,0.2);
+      width: 35rem;
+      text-align: center;
+    }
+
+    h2 {
+      color: green;
+    }
+
+    button {
+      margin: 0.5rem;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 0.8rem;
+      background-color: green;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkgreen;
+    }
+
+    input {
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border-radius: 0.8rem;
+      border: 0.1rem solid #ccc;
+      width: 90%;
+    }
+
+    #output {
+      background: #eee;
+      border-radius: 0.8rem;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      text-align: left;
+      min-height: 10rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="atm-container">
+    <h2>WELCOME TO SBTS BANK ATM</h2>
+    <div id="actions">
+      <button
+      onclick="showDeposit()">Deposit
+      </button>
+      <button
+      onclick="showWithdraw()">Withdraw
+      </button>
+      <button
+      onclick="showTransfer()">Transfer
+      </button>
+      <button
+      onclick="viewStatement()">Statement
+      </button>
+      <button onclick="
+      showBalance()">Balance</button>
+      <button
+      onclick="exitATM()">Exit
+      </button>
+      <button onclick="
+      changePin()">PIN Reset</button>
+    </div>
+    <div id="inputArea"></div>
+    <div id="output"></div>
+
+    <div id="pin-reset-area" style="display: none; border: 1px solid #ccc; padding: 15px; margin-top: 10px; border-radius: 8px;">
+  <h3>Reset Your PIN</h3>
+  <input type="password" id="oldPin" placeholder="Enter current PIN" maxlength="4"><br><br>
+  <input type="password" id="newPin" placeholder="Enter new 4-digit PIN" maxlength="4"><br><br>
+  <input type="password" id="confirmPin" placeholder="Confirm new PIN" maxlength="4"><br><br>
+  <button onclick="submitPinChange()">Submit</button>
+  <button onclick="cancelPinChange()">Cancel</button>
+</div>
+  </div>
+  
+  <script src="/JavaScript/atmUpdatedApp.js"></script>
+</body>
+</html>
